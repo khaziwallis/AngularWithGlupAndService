@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Angular APP </title>
+    <script src="build/finalBuild.js"> </script>
+</head>
+<body>
+    <h1>It works with gulp routes and controller!</h1>
+    <div ng-controller="MainController">
+    	I am from Main controller<br>
+    	Here is the Message: {{message}} <br>
+
+        <hr>
+        Here is API Call Data
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            <tr ng-repeat="user in users.users">
+                <td> {{user.id}}</td>
+                <td> {{user.name}}</td>
+                <td> {{user.age}}</td>
+            </tr>
+        </table>
+    	<hr>
+
+        <hr>
+        Here is JSON Call Data
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Designation</th>
+            </tr>
+            <tr ng-repeat="employee in employees.employees">
+                <td> {{employee.id}}</td>
+                <td> {{employee.name}}</td>
+                <td> {{employee.job}}</td>
+            </tr>
+        </table>
+        <hr>
+    </div>
+
+    <div>
+    	<ul>
+    		<li> <a href="#/home"> Home</li>
+    		<li> <a href="#/contact"> Contact</li>
+    	</ul>
+    </div>
+    <ng-view>
+    </ng-view>
+</body>
+</html>
